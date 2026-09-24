@@ -12,26 +12,37 @@
             font-family: 'SolaimanLipi', Arial, sans-serif;
         }
         body {
-            background-color: #f4f9f4;
+            background-color: #f0f4f8;
             color: #333;
         }
-        /* Header & Navigation */
+        /* Header Style from Image */
         header {
-            background-color: #0b6623;
+            background-color: #0d47a1;
             color: white;
             text-align: center;
-            padding: 20px 10px;
+            padding: 25px 15px;
+        }
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: white;
+            padding: 2px;
+            margin-bottom: 10px;
+            object-fit: cover;
         }
         header h1 {
             font-size: 24px;
             margin-bottom: 5px;
+            font-weight: bold;
         }
         header p {
             font-size: 14px;
-            color: #e0f2f1;
+            color: #e3f2fd;
         }
+        /* Navigation */
         nav {
-            background-color: #084c1a;
+            background-color: #0b3c82;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -40,34 +51,33 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 8px 15px;
-            margin: 4px;
-            font-size: 15px;
+            padding: 6px 12px;
+            margin: 3px;
+            font-size: 14px;
             border-radius: 4px;
             transition: background 0.3s;
         }
         nav a:hover {
-            background-color: #0b6623;
+            background-color: #0d47a1;
         }
-        /* Container */
+        /* Container & Cards */
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 20px auto;
             padding: 0 15px;
         }
-        .section {
+        .card {
             background: white;
-            padding: 25px;
+            padding: 20px;
             margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            border-top: 4px solid #0b6623;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
         h2 {
-            color: #0b6623;
+            color: #0d47a1;
             margin-bottom: 15px;
             font-size: 20px;
-            border-bottom: 2px solid #e0f2f1;
+            border-bottom: 2px solid #0d47a1;
             padding-bottom: 8px;
         }
         p {
@@ -75,29 +85,30 @@
             color: #555;
             margin-bottom: 10px;
             text-align: justify;
+            font-size: 15px;
         }
-        /* Chairman Speech */
+        /* Chairman Section */
         .chairman-box {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 15px;
+            text-align: center;
         }
         @media(min-width: 600px) {
             .chairman-box {
                 flex-direction: row;
-                align-items: center;
+                text-align: left;
             }
         }
-        .chairman-img {
-            width: 150px;
-            height: 150px;
+        .chairman-photo {
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            background-color: #ccc;
             object-fit: cover;
-            border: 3px solid #0b6623;
-            margin: 0 auto;
+            border: 4px solid #0d47a1;
         }
-        /* Donation Section */
+        /* Donation Grid */
         .donation-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -105,32 +116,33 @@
             margin-top: 15px;
         }
         .pay-card {
-            background: #f9fff9;
-            border: 1px solid #c8e6c9;
+            background: #f8fbff;
+            border: 1px solid #bbdefb;
             padding: 15px;
-            border-radius: 6px;
+            border-radius: 8px;
             text-align: center;
         }
         .pay-card h3 {
-            color: #0b6623;
+            color: #0d47a1;
             margin-bottom: 8px;
         }
         .btn-pay {
             display: inline-block;
             margin-top: 10px;
-            background-color: #0b6623;
+            background-color: #0d47a1;
             color: white;
-            padding: 8px 15px;
+            padding: 8px 16px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 5px;
             font-size: 14px;
+            font-weight: bold;
         }
         .btn-pay:hover {
-            background-color: #084c1a;
+            background-color: #0b3c82;
         }
         /* Footer */
         footer {
-            background-color: #084c1a;
+            background-color: #0b3c82;
             color: white;
             text-align: center;
             padding: 15px;
@@ -142,8 +154,9 @@
 <body>
 
     <header>
+        <img src="1000003749_4.jpg" alt="Logo" class="logo-img">
         <h1>আল-আহসান ফাউন্ডেশন বাংলাদেশ</h1>
-        <p>Al-Ahsan Foundation Bangladesh (EST: 2018)</p>
+        <p>মানবতার কল্যাণে অনুদান ও সহযোগিতার আস্থার ঠিকানা</p>
     </header>
 
     <nav>
@@ -151,80 +164,76 @@
         <a href="#about">আমাদের সম্পর্কে</a>
         <a href="#chairman">চেয়ারম্যানের বাণী</a>
         <a href="#projects">প্রকল্পসমূহ</a>
-        <a href="#distribution">বিতরণ কর্মসূচি</a>
         <a href="#donation">অনুদান প্রদান</a>
         <a href="#contact">যোগাযোগ</a>
     </nav>
 
     <div class="container" id="home">
-        <!-- আমাদের সম্পর্কে সেকশন -->
-        <div class="section" id="about">
-            <h2>আমাদের সম্পর্কে</h2>
-            <p>আল-আহসান ফাউন্ডেশন বাংলাদেশ একটি সম্পূর্ণ অরাজনৈতিক, অলাভজনক ও মানবকল্যাণমুখী দাতব্য সংস্থা। ২০১৮ সাল থেকে প্রতিষ্ঠিত হয়ে আমরা সমাজের অবহেলিত, এতিম ও দরিদ্র মানুষের পাশে দাঁড়িয়ে সেবামূলক কার্যক্রম পরিচালনা করে আসছি। শিক্ষা, স্বাস্থ্য, খাদ্য সহায়তা ও দারিদ্র্য বিমোচনে আমাদের কর্মপ্রচেষ্টা সর্বদা অব্যাহত রয়েছে।</p>
-            <p>আমরা বিশ্বাস করি সামাজিক দায়বদ্ধতা ও সঠিক উদ্যোগের মাধ্যমে একটি সুন্দর, বৈষম্যহীন ও আত্মনির্ভরশীল সমাজ গঠন করা সম্ভব।</p>
+        <!-- লক্ষ্য ও উদ্দেশ্য / আমাদের সম্পর্কে -->
+        <div class="card" id="about">
+            <h2>আমাদের লক্ষ্য ও উদ্দেশ্য</h2>
+            <p>আল-আহসান ফাউন্ডেশন বাংলাদেশ একটি সম্পূর্ণ অরাজনৈতিক ও সেবামূলক প্রতিষ্ঠান। সমাজের দুস্থ, অসহায়, ও সুবিধাবঞ্চিত মানুষের জীবনমান উন্নয়নে আমরা নিরলসভাবে কাজ করে যাচ্ছি। আপনার ক্ষুদ্র সহযোগিতা একটি বড় পরিবর্তন আনতে পারে।</p>
+            <p>২০১৮ সাল থেকে প্রতিষ্ঠিত হয়ে আমরা সমাজের অবহেলিত, এতিম ও দরিদ্র মানুষের পাশে দাঁড়িয়ে নিয়মিত মানবিক ও দাতব্য কার্যক্রম পরিচালনা করে আসছি।</p>
         </div>
 
-        <!-- চেয়ারম্যানের বাণী সেকশন -->
-        <div class="section" id="chairman">
+        <!-- চেয়ারম্যানের বাণী -->
+        <div class="card" id="chairman">
             <h2>চেয়ারম্যানের বাণী</h2>
             <div class="chairman-box">
                 <div>
-                    <img src="chairman.jpg" alt="Chairman" class="chairman-img">
+                    <img src="1000003653.jpg" alt="Chairman" class="chairman-photo">
                 </div>
                 <div>
-                    <p>“মানবসেবাই পরম ধর্ম। আমাদের সমাজের সুবিধাবঞ্চিত ও অবহেলিত মানুষের মুখে হাসি ফোটানোর প্রত্যয় নিয়েই আল-আহসান ফাউন্ডেশনের যাত্রা শুরু হয়েছিল। আপনাদের সকলের আন্তরিক সহযোগিতা ও ভালোবাসায় আমরা আর্তমানবতার সেবায় কাজ করে যাচ্ছি। আসুন, সবাই মিলে একটি সুন্দর ও বৈষম্যহীন সমাজ গড়ে তুলি।”</p>
-                    <p><b>— সভাপতি / চেয়ারম্যান</b><br>আল-আহসান ফাউন্ডেশন বাংলাদেশ</p>
+                    <p>“মানবসেবাই পরম ধর্ম। আমাদের সমাজের সুবিধাবঞ্চিত মানুষের মুখে হাসি ফোটানোর প্রত্যয় নিয়েই আল-আহসান ফাউন্ডেশনের যাত্রা। আপনাদের সকলের আন্তরিক সহযোগিতায় আমরা আর্তমানবতার সেবায় কাজ চালিয়ে যাচ্ছি।”</p>
+                    <p style="margin-top: 5px;"><b>— প্রতিষ্ঠাতা ও চেয়ারম্যান</b><br>আল-আহসান ফাউন্ডেশন বাংলাদেশ</p>
                 </div>
             </div>
         </div>
 
-        <!-- প্রকল্পসমূহ ও বিতরণ কর্মসূচি -->
-        <div class="section" id="projects">
+        <!-- প্রকল্পসমূহ -->
+        <div class="card" id="projects">
             <h2>প্রকল্পসমূহ ও বিতরণ কর্মসূচি</h2>
-            <p>ফাউন্ডেশনের পক্ষ থেকে নিয়মিতভাবে বিভিন্ন কল্যাণমূলক প্রজেক্ট ও ত্রাণ বিতরণ কর্মসূচি পরিচালিত হয়ে থাকে:</p>
+            <p>আমাদের নিয়মিত কার্যক্রমের মধ্যে রয়েছে:</p>
             <ul style="margin-left: 20px; line-height: 1.8; color: #555;">
+                <li>বিনামূল্যে স্কুল ব্যাগ ও শিক্ষা উপকরণ বিতরণ</li>
                 <li>খাদ্যসামগ্রী ও ত্রাণ বিতরণ কর্মসূচি</li>
-                <li>শিক্ষা উপকরণ ও এতিম শিক্ষার্থীদের সহায়তা</li>
                 <li>চিকিৎসা সহায়তা ও স্বাস্থ্যসেবা ক্যাম্প</li>
                 <li>শীতবস্ত্র বিতরণ ও পুনর্বাসন প্রকল্প</li>
             </ul>
         </div>
 
-        <!-- অনুদান প্রদান সেকশন (সরাসরি অ্যাপ লিংক সহ) -->
-        <div class="section" id="donation">
-            <h2>অনুদান প্রদান করুন (সরাসরি অ্যাপের মাধ্যমে)</h2>
-            <p>আপনার যাকাত, সদকা ও অনুদান নিচের মার্চেন্ট বা পার্সোনাল নাম্বারে সরাসরি সেন্ড করতে পারেন। নিচের বাটনে ক্লিক করলে সরাসরি আপনার বিকাশ/নগদ অ্যাপে চলে যাবে:</p>
+        <!-- মোবাইল ব্যাংকিং অনুদান সিস্টেম -->
+        <div class="card" id="donation">
+            <h2>মোবাইল ব্যাংকিং অনুদান সিস্টেম</h2>
+            <p>সরাসরি আপনার বিকাশ, নগদ বা রকেট অ্যাপের মাধ্যমে অনুদান পাঠাতে নিচের বাটনগুলোতে ক্লিক করুন:</p>
             
             <div class="donation-grid">
                 <div class="pay-card">
                     <h3>বিকাশ (Bkash)</h3>
-                    <p>সরাসরি পেমেন্ট করতে নিচ <b>সরাসরি অ্যাপে যান</b> এ ক্লিক করুন</p>
-                    <p style="font-weight: bold; color: #333;">পার্সোনাল/মার्चেন্ট: 01312515643</p>
+                    <p style="font-weight: bold; color: #333; margin: 5px 0;">পার্সোনাল/মার্চেন্ট: 01312515643</p>
                     <a href="bkash://app" class="btn-pay">বিকাশ অ্যাপে যান</a>
                 </div>
 
                 <div class="pay-card">
                     <h3>নগদ (Nagad)</h3>
-                    <p>সরাসরি পেমেন্ট করতে নিচ <b>সরাসরি অ্যাপে যান</b> এ ক্লিক করুন</p>
-                    <p style="font-weight: bold; color: #333;">পার্সোনাল/মার্চেন্ট: 01312515643</p>
+                    <p style="font-weight: bold; color: #333; margin: 5px 0;">পার্সোনাল/মার্চেন্ট: 01312515643</p>
                     <a href="nagad://app" class="btn-pay">নগদ অ্যাপে যান</a>
                 </div>
 
                 <div class="pay-card">
                     <h3>রকেট (Rocket)</h3>
-                    <p>সরাসরি পেমেন্ট করতে নিচের বাটনে চাপুন</p>
-                    <p style="font-weight: bold; color: #333;">একাউন্ট: 01312515643-X</p>
+                    <p style="font-weight: bold; color: #333; margin: 5px 0;">একাউন্ট: 01312515643-X</p>
                     <a href="rocket://app" class="btn-pay">রকেট অ্যাপে যান</a>
                 </div>
             </div>
         </div>
 
         <!-- যোগাযোগ সেকশন -->
-        <div class="section" id="contact">
+        <div class="card" id="contact">
             <h2>যোগাযোগ</h2>
-            <p><b>ঠিকানা:</b> প্রধান কার্যালয়, বাংলাদেশ।</p>
-            <p><b>হটলাইন/মোবাইল:</b> 09611399315</p>
-            <p><b>ইমেইল:</b> info@alahsanfoundationbd.com</p>
+            <p><b>ঠিকানা:</b> দেওয়ানগঞ্জ, জামালপুর, বাংলাদেশ।</p>
+            <p><b>হটলাইন:</b> +৮৮০ ৯৬১১-৩৯৯৩১৫</p>
+            <p><b>অফিসিয়াল ওয়েবসাইট:</b> alahsanfoundation.bd.org</p>
         </div>
     </div>
 

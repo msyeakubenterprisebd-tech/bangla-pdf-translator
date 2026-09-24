@@ -3,302 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>মেসার্স ইয়াকুব ট্রেডার্স - ম্যানেজমেন্ট ড্যাশবোর্ড</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (SolaimanLipi or Noto Sans Bengali) -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>আল-আহসান ফাউন্ডেশন বাংলাদেশ</title>
     <style>
+        :root {
+            --primary-color: #0a3d62;
+            --secondary-color: #3c6382;
+            --accent-color: #e58e26;
+            --bg-color: #f7f9fa;
+            --text-color: #2f3640;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+        }
+
         body {
-            font-family: 'Noto Sans Bengali', sans-serif;
-            background-color: #f4f7f6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        .sidebar {
-            min-height: 100vh;
-            background-color: #1e293b;
-            color: #fff;
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .sidebar a {
-            color: #94a3b8;
-            text-decoration: none;
-            padding: 12px 20px;
-            display: block;
-            border-radius: 5px;
+
+        .logo-container {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 15px auto;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 3px solid rgba(255,255,255,0.8);
+        }
+
+        .logo-container img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-size: 26px;
             margin-bottom: 5px;
-            transition: all 0.3s;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
-        .sidebar a:hover, .sidebar a.active {
-            background-color: #0d6efd;
-            color: #fff;
+
+        header p {
+            font-size: 15px;
+            color: #dcdde1;
+            font-weight: 300;
         }
-        .main-content {
+
+        /* Navigation Bar */
+        nav {
+            background-color: #072e4d;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 16px;
+            margin: 4px;
+            font-size: 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 18px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f1f2f6;
+        }
+
+        p {
+            color: #57606f;
+            margin-bottom: 12px;
+            text-align: justify;
+            font-size: 16px;
+        }
+
+        /* Chairman Section Styling */
+        .chairman-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        @media(min-width: 650px) {
+            .chairman-box {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+
+        .chairman-photo-wrap {
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .chairman-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Donation Section Styling */
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pay-card {
+            background: #fdfefe;
+            border: 1px solid #dfe4ea;
             padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
         }
-        .card-stat {
-            border-left: 4px solid #0d6efd;
+
+        .pay-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(10, 61, 98, 0.1);
         }
-        .header-section {
-            background: #fff;
-            padding: 15px 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-radius: 8px;
+
+        .pay-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .number-badge {
+            background: #f1f2f6;
+            padding: 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin: 12px 0;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-pay {
+            display: inline-block;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 0;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .btn-pay:hover {
+            background-color: #072e4d;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #072e4d;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            border-top: 4px solid var(--accent-color);
         }
     </style>
 </head>
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
-            <!-- সাইডবার (Sidebar) -->
-            <div class="col-md-3 col-lg-2 sidebar p-3 d-none d-md-block">
-                <h4 class="text-white text-center py-3 border-bottom border-secondary">
-                    <i class="fa-solid fa-store"></i> ইয়াকুব ট্রেডার্স
-                </h4>
-                <ul class="nav flex-column mt-3">
-                    <li class="nav-item"><a href="#" class="active"><i class="fa-solid fa-chart-line me-2"></i> ড্যাশবোর্ড</a></li>
-                    <li class="nav-item"><a href="#incomeExpense"><i class="fa-solid fa-wallet me-2"></i> আয়-ব্যয় খাতা</a></li>
-                    <li class="nav-item"><a href="#laborSection"><i class="fa-solid fa-users me-2"></i> লেবার হিসাব খাতা</a></li>
-                    <li class="nav-item"><a href="#filingSection"><i class="fa-solid fa-folder-open me-2"></i> ফাইলিং কার্যক্রম</a></li>
-                    <li class="nav-item"><a href="#contactSection"><i class="fa-solid fa-address-book me-2"></i> যোগাযোগ ও ঠিকানা</a></li>
-                </ul>
+    <!-- Header & Logo -->
+    <header>
+        <div class="logo-container">
+            <img src="1000003749_2.jpg" alt="Logo">
+        </div>
+        <h1>আল-আহসান ফাউন্ডেশন বাংলাদেশ</h1>
+        <p>মানবতার কল্যাণে অনুদান ও সহযোগিতার আস্থার ঠিকানা</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">হোম</a>
+        <a href="#about">আমাদের সম্পর্কে</a>
+        <a href="#chairman">চেয়ারম্যানের বাণী</a>
+        <a href="#projects">প্রকল্পসমূহ</a>
+        <a href="#donation">অনুদান প্রদান</a>
+        <a href="#contact">যোগাযোগ</a>
+    </nav>
+
+    <div class="container" id="home">
+        <!-- লক্ষ্য ও উদ্দেশ্য -->
+        <div class="card" id="about">
+            <h2>আমাদের লক্ষ্য ও উদ্দেশ্য</h2>
+            <p>আল-আহসান ফাউন্ডেশন বাংলাদেশ একটি সম্পূর্ণ অরাজনৈতিক ও সেবামূলক প্রতিষ্ঠান। সমাজের দুস্থ, অসহায়, ও সুবিধাবঞ্চিত মানুষের জীবনমান উন্নয়নে আমরা নিরলসভাবে কাজ করে যাচ্ছি। আপনার ক্ষুদ্র সহযোগিতা সমাজে একটি বড় ইতিবাচক পরিবর্তন আনতে পারে।</p>
+            <p>২০১৮ সাল থেকে প্রতিষ্ঠিত হয়ে আমরা সমাজের অবহেলিত, এতিম ও দরিদ্র মানুষের পাশে দাঁড়িয়ে নিয়মিত মানবিক ও দাতব্য কার্যক্রম পরিচালনা করে আসছি।</p>
+        </div>
+
+        <!-- চেয়ারম্যানের বাণী -->
+        <div class="card" id="chairman">
+            <h2>চেয়ারম্যানের বাণী</h2>
+            <div class="chairman-box">
+                <div class="chairman-photo-wrap">
+                    <img src="1000003653.jpg" alt="Chairman" class="chairman-photo">
+                </div>
+                <div>
+                    <p>“মানবসেবাই পরম ধর্ম। আমাদের সমাজের সুবিধাবঞ্চিত মানুষের মুখে হাসি ফোটানোর প্রত্যয় নিয়েই আল-আহসান ফাউন্ডেশনের যাত্রা শুরু হয়েছিল। আপনাদের সকলের আন্তরিক সহযোগিতায় আমরা আর্তমানবতার সেবায় কাজ চালিয়ে যাচ্ছি।”</p>
+                    <p style="margin-top: 10px;"><b>— প্রতিষ্ঠাতা ও চেয়ারম্যান</b><br><span style="color: var(--primary-color);">আল-আহসান ফাউন্ডেশন বাংলাদেশ</span></p>
+                </div>
             </div>
+        </div>
 
-            <!-- মূল কন্টেন্ট (Main Content) -->
-            <div class="col-md-9 col-lg-10 ms-auto main-content">
-                
-                <!-- হেডার -->
-                <div class="header-section d-flex justify-content-between align-items-center mb-4">
-                    <div>
-                        <h3 class="mb-0 text-dark fw-bold">মেসার্স ইয়াকুব ট্রেডার্স</h3>
-                        <p class="text-muted mb-0 small"><i class="fa-solid fa-location-dot text-danger"></i> দেওয়ানগঞ্জ, জামালপুর</p>
-                    </div>
-                    <div>
-                        <span class="badge bg-success p-2">অফিসিয়াল পোর্টাল</span>
-                    </div>
+        <!-- প্রকল্পসমূহ -->
+        <div class="card" id="projects">
+            <h2>প্রকল্পসমূহ ও বিতরণ কর্মসূচি</h2>
+            <p>আমাদের নিয়মিত এবং জরুরি মানবিক কার্যক্রমের মধ্যে রয়েছে:</p>
+            <ul style="margin-left: 20px; line-height: 1.8; color: #57606f;">
+                <li>বিনামূল্যে স্কুল ব্যাগ ও শিক্ষা উপকরণ বিতরণ প্রকল্প ২০২৬</li>
+                <li>দুস্থ ও অসহায়দের মাঝে খাদ্যসামগ্রী ও ত্রাণ বিতরণ</li>
+                <li>জরুরি চিকিৎসা সহায়তা ও স্বাস্থ্যসেবা ক্যাম্প</li>
+                <li>শীতবস্ত্র বিতরণ ও পুনর্বাসন প্রকল্প</li>
+            </ul>
+        </div>
+
+        <!-- মোবাইল ব্যাংকিং অনুদান সিস্টেম -->
+        <div class="card" id="donation">
+            <h2>মোবাইল ব্যাংকিং অনুদান সিস্টেম</h2>
+            <p>আপনার যাকাত, সদকা ও অনুদান সরাসরি নিচের বিকাশ, নগদ বা রকেট নম্বরে পাঠাতে পারেন। পেমেন্ট সম্পন্ন করতে সরাসরি অ্যাপে যাওয়ার বোতাম ব্যবহার করুন:</p>
+            
+            <div class="donation-grid">
+                <!-- বিকাশ -->
+                <div class="pay-card">
+                    <h3>বিকাশ (bKash)</h3>
+                    <p style="font-size: 13px; color: #718093;">সরাসরি অ্যাপে পেমেন্ট করুন</p>
+                    <div class="number-badge">০১৩১২৫১৫৬৪৩</div>
+                    <a href="bkash://app" class="btn-pay">বিকাশ অ্যাপে যান</a>
                 </div>
 
-                <!-- স্ট্যাটিস্টিকস কার্ড -->
-                <div class="row g-3 mb-4">
-                    <div class="col-md-4">
-                        <div class="card card-stat shadow-sm p-3 bg-white rounded">
-                            <h6 class="text-muted">মোট আয় (আজ)</h6>
-                            <h4 class="fw-bold text-success">৳ <span id="totalIncome">০.০০</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-stat shadow-sm p-3 bg-white rounded" style="border-left-color: #dc3545;">
-                            <h6 class="text-muted">মোট ব্যয় (আজ)</h6>
-                            <h4 class="fw-bold text-danger">৳ <span id="totalExpense">০.০০</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-stat shadow-sm p-3 bg-white rounded" style="border-left-color: #ffc107;">
-                            <h6 class="text-muted">লেবার বকেয়া/পেমেন্ট</h6>
-                            <h4 class="fw-bold text-warning">৳ <span id="totalLaborDue">০.০০</span></h4>
-                        </div>
-                    </div>
+                <!-- নগদ -->
+                <div class="pay-card">
+                    <h3>নগদ (Nagad)</h3>
+                    <p style="font-size: 13px; color: #718093;">সরাসরি অ্যাপে পেমেন্ট করুন</p>
+                    <div class="number-badge">০১৩১২৫১৫৬৪৩</div>
+                    <a href="nagad://app" class="btn-pay">নগদ অ্যাপে যান</a>
                 </div>
 
-                <!-- আয়-ব্যয় খাতা সেকশন -->
-                <div id="incomeExpense" class="card shadow-sm mb-4 p-4 bg-white rounded">
-                    <h5 class="mb-3 text-primary"><i class="fa-solid fa-wallet"></i> আই-ব্যায় খাতা (হিসাব নিকাশ)</h5>
-                    <form id="transactionForm" class="row g-3 mb-4">
-                        <div class="col-md-3">
-                            <label class="form-label">বিবরণ</label>
-                            <input type="text" id="tDesc" class="form-control" placeholder="যেমন: ফাইলিং ফি / অন্যান্য খরচ" required>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">ধরন</label>
-                            <select id="tType" class="form-select">
-                                <option value="income">আয় (+)</option>
-                                <option value="expense">ব্যয় (-)</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">টাকা (৳)</label>
-                            <input type="number" id="tAmount" class="form-control" placeholder="পরিমাণ" required>
-                        </div>
-                        <div class="col-md-3 d-flex align-items-end">
-                            <button type="submit" class="btn btn-primary w-100"><i class="fa-solid fa-plus"></i> হিসাব যোগ করুন</button>
-                        </div>
-                    </form>
-
-                    <!-- টেবিল -->
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>তারিখ</th>
-                                    <th>বিবরণ</th>
-                                    <th>ধরন</th>
-                                    <th>টাকা</th>
-                                </tr>
-                            </thead>
-                            <tbody id="transactionTableBody">
-                                <!-- ডাইনামিক ডেটা এখানে আসবে -->
-                            </tbody>
-                        </table>
-                    </div>
+                <!-- রকেট -->
+                <div class="pay-card">
+                    <h3>রকেট (Rocket)</h3>
+                    <p style="font-size: 13px; color: #718093;">সরাসরি অ্যাপে পেমেন্ট করুন</p>
+                    <div class="number-badge">০১৩১২৫১৫৬৪৩</div>
+                    <a href="rocket://app" class="btn-pay">রকেট অ্যাপে যান</a>
                 </div>
-
-                <!-- লেবারদের হিসাব খাতা সেকশন -->
-                <div id="laborSection" class="card shadow-sm mb-4 p-4 bg-white rounded">
-                    <h5 class="mb-3 text-success"><i class="fa-solid fa-users"></i> লেবারদের আই-ব্যায় হিসাব খাতা</h5>
-                    <form id="laborForm" class="row g-3 mb-4">
-                        <div class="col-md-3">
-                            <label class="form-label">লেবারের নাম</label>
-                            <input type="text" id="laborName" class="form-control" placeholder="নাম লিখুন" required>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">কাজের বিবরণ</label>
-                            <input type="text" id="laborWork" class="form-control" placeholder="কাজের বিবরণ" required>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">পাওনা টাকা (৳)</label>
-                            <input type="number" id="laborAmount" class="form-control" placeholder="টাকার পরিমাণ" required>
-                        </div>
-                        <div class="col-md-3 d-flex align-items-end">
-                            <button type="submit" class="btn btn-success w-100"><i class="fa-solid fa-user-plus"></i> লেবার এন্ট্রি যোগ</button>
-                        </div>
-                    </form>
-
-                    <!-- লেবার টেবিল -->
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
-                            <thead class="table-success text-dark">
-                                <tr>
-                                    <th>তারিখ</th>
-                                    <th>লেবারের নাম</th>
-                                    <th>কাজের বিবরণ</th>
-                                    <th>টাকা (৳)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="laborTableBody">
-                                <!-- ডাইনামিক ডেটা এখানে আসবে -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- ফাইলিং কার্যক্রম ও ঠিকানা -->
-                <div class="row">
-                    <div id="filingSection" class="col-md-6 mb-4">
-                        <div class="card shadow-sm p-4 bg-white rounded h-100">
-                            <h5 class="text-dark mb-3"><i class="fa-solid fa-folder-open text-warning"></i> ফাইলিং কার্যক্রম</h5>
-                            <p class="text-muted">এখানে বিভিন্ন ফাইলিং কাজের বিবরণ ও স্ট্যাটাস আপডেট রাখা হবে।</p>
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    নতুন ফাইল সাবমিশন
-                                    <span class="badge bg-primary rounded-pill">চলমান</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    নথি যাচাইকরণ ও সিল
-                                    <span class="badge bg-success rounded-pill">সম্পন্ন</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div id="contactSection" class="col-md-6 mb-4">
-                        <div class="card shadow-sm p-4 bg-white rounded h-100">
-                            <h5 class="text-dark mb-3"><i class="fa-solid fa-map-location-dot text-danger"></i> প্রতিষ্ঠানের ঠিকানা</h5>
-                            <p><strong>প্রতিষ্ঠানের নাম:</strong> মেসার্স ইয়াকুব ট্রেডার্স</p>
-                            <p><strong>ঠিকানা:</strong> দেওয়ানগঞ্জ, জামালপুর</p>
-                            <p class="text-muted small mb-0"><i class="fa-solid fa-circle-info"></i> যেকোনো প্রয়োজনে অফিসিয়াল নাম্বারে যোগাযোগ করুন।</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+        </div>
+
+        <!-- যোগাযোগ -->
+        <div class="card" id="contact">
+            <h2>যোগাযোগ</h2>
+            <p><b>প্রধান কার্যালয়:</b> দেওয়ানগঞ্জ, জামালপুর, বাংলাদেশ[span_6](start_span)[span_6](end_span)।</p>
+            <p><b>হটলাইন:</b> +৮৮০ ৯৬১১-৩৯৯৩১৫[span_7](start_span)[span_7](end_span)</p>
+            <p><b>অনুদান হটলাইন:</b> ০১৩১২৫১৫৬৪৩</p>
+            <p><b>অফিসিয়াল ওয়েবসাইট:</b> alahsanfoundation.bd.org[span_8](start_span)[span_8](end_span)</p>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- JavaScript ফাংশন -->
-    <script>
-        // আয়-ব্যয় খাতা স্ক্রিপ্ট
-        const transactionForm = document.getElementById('transactionForm');
-        const transactionTableBody = document.getElementById('transactionTableBody');
-        const totalIncomeEl = document.getElementById('totalIncome');
-        const totalExpenseEl = document.getElementById('totalExpense');
+    <!-- Footer -->
+    <footer>
+        <p>&copy; ২০২৬ আল-আহসান ফাউন্ডেশন বাংলাদেশ। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
 
-        let transactions = [];
-        let tInc = 0;
-        let tExp = 0;
-
-        transactionForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const desc = document.getElementById('tDesc').value;
-            const type = document.getElementById('tType').value;
-            const amount = parseFloat(document.getElementById('tAmount').value);
-            const date = new Date().toLocaleDateString('bn-BD');
-
-            transactions.push({ date, desc, type, amount });
-
-            if(type === 'income') {
-                tInc += amount;
-                totalIncomeEl.innerText = tInc.toLocaleString('bn-BD');
-            } else {
-                tExp += amount;
-                totalExpenseEl.innerText = tExp.toLocaleString('bn-BD');
-            }
-
-            renderTransactions();
-            transactionForm.reset();
-        });
-
-        function renderTransactions() {
-            transactionTableBody.innerHTML = '';
-            transactions.forEach(t => {
-                let row = `<tr>
-                    <td>${t.date}</td>
-                    <td>${t.desc}</td>
-                    <td><span class="badge ${t.type === 'income' ? 'bg-success' : 'bg-danger'}">${t.type === 'income' ? 'আয়' : 'ব্যয়'}</span></td>
-                    <td>৳ ${t.amount.toLocaleString('bn-BD')}</td>
-                </tr>`;
-                transactionTableBody.innerHTML += row;
-            });
-        }
-
-        // লেবার হিসাব খাতা স্ক্রিপ্ট
-        const laborForm = document.getElementById('laborForm');
-        const laborTableBody = document.getElementById('laborTableBody');
-        const totalLaborDueEl = document.getElementById('totalLaborDue');
-
-        let labors = [];
-        let totalLaborAmount = 0;
-
-        laborForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('laborName').value;
-            const work = document.getElementById('laborWork').value;
-            const amount = parseFloat(document.getElementById('laborAmount').value);
-            const date = new Date().toLocaleDateString('bn-BD');
-
-            labors.push({ date, name, work, amount });
-            totalLaborAmount += amount;
-            totalLaborDueEl.innerText = totalLaborAmount.toLocaleString('bn-BD');
-
-            renderLabors();
-            laborForm.reset();
-        });
-
-        function renderLabors() {
-            laborTableBody.innerHTML = '';
-            labors.forEach(l => {
-                let row = `<tr>
-                    <td>${l.date}</td>
-                    <td>${l.name}</td>
-                    <td>${l.work}</td>
-                    <td>৳ ${l.amount.toLocaleString('bn-BD')}</td>
-                </tr>`;
-                laborTableBody.innerHTML += row;
-            });
-        }
-    </script>
 </body>
 </html>

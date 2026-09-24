@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আল-আহসান ফাউন্ডেশন বাংলাদেশ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        /* Header & Navbar */
+        header {
+            background-color: #0d3b66;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .logo {
+            background: white;
+            color: #0d3b66;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        nav {
+            background-color: #1d6fa5;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            margin: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background-color: #0d3b66;
+            border-radius: 4px;
+        }
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            color: #0d3b66;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0a96d;
+            padding-bottom: 5px;
+        }
+        .card p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        /* Donation Button */
+        .btn-donate {
+            display: inline-block;
+            background-color: #e0a96d;
+            color: #0d3b66;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn-donate:hover {
+            background-color: #d0985c;
+        }
+        /* Footer */
+        footer {
+            background-color: #0d3b66;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার ও নেভিগেশন -->
+    <header>
+        <div class="logo-area">
+            <div class="logo">AH</div>
+            <div>
+                <h1>আল-আহসান ফাউন্ডেশন বাংলাদেশ</h1>
+                <p style="font-size: 14px; color: #e0f2fe;">Al-Ahsan Foundation Bangladesh</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">হোম</a>
+        <a href="#">আমাদের সম্পর্কে</a>
+        <a href="#">চেয়ারম্যান</a>
+        <a href="#">প্রকল্পসমূহ</a>
+        <a href="#">অনদান</a>
+        <a href="#">যোগাযোগ</a>
+    </nav>
+
+    <!-- মূল কনটেন্ট -->
+    <div class="container">
+        
+        <div class="card">
+            <h2>আমাদের সম্পর্কে</h2>
+            <p>আল-আহসান ফাউন্ডেশন বাংলাদেশ একটি সম্পূর্ণ অরাজনৈতিব, অলাভজনক ও মানবকল্যাণমুখী দাতব্য সংস্থা[span_0](start_span)[span_0](end_span)। ২০১৮ সাল থেকে প্রতিষ্ঠিত হয়ে আমরা সমাজের অবহেলিত, এতিম ও দরিদ্র মানুষের পাশে দাঁড়িয়ে সেবামূলক কার্যক্রম পরিচালনা করে আসছি[span_1](start_span)[span_1](end_span)।</p>
+            <p>শিক্ষা, স্বাস্থ্য, খাদ্য সহায়তা ও দারিদ্র্য বিমোচনে আমাদের কর্মচেষ্টা সর্বদা অব্যাহত রয়েছে[span_2](start_span)[span_2](end_span)। আমরা বিশ্বাস করি সামাজিক দায়বদ্ধতা ও সঠিক উদ্যোগের মাধ্যমে একটি সুন্দর, বৈষম্যহীন ও আত্মনির্ভরশীল সমাজ গঠন সম্ভব[span_3](start_span)[span_3](end_span)।</p>
+        </div>
+
+        <div class="card">
+            <h2>আমাদের কার্যক্রম ও প্রকল্পসমূহ</h2>
+            <p><strong>১. শিক্ষা সহায়তা:</strong> গরিব ও মেধাবী শিক্ষার্থীদের মাঝে শিক্ষা উপকরণ ও বৃত্তি প্রদান।</p>
+            <p><strong>২. চিকিৎসা সেবা:</strong> অসহায় ও অসুস্থ রোগীদের চিকিৎসায় আর্থিক সহায়তা প্রদান।</p>
+            <p><strong>৩. খাদ্য বিতরণ:</strong> প্রতি মাসে এতিম ও দরিদ্র পরিবারগুলোর মাঝে খাদ্য সামগ্রী বিতরণ।</p>
+            <p><strong>৪. শীতবস্ত্র বিতরণ:</strong> শীতের সময় দুস্থ মানুষের মাঝে কম্বল ও শীতবস্ত্র বিতরণ।</p>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>মানবতার সেবায় আমাদের সাথে থাকুন</h2>
+            <p>আপনার ছোট্ট একটি অনুদান বদলে দিতে পারে একজন অসহায় মানুষের জীবন। বিকাশ, নগদ বা ব্যাংকের মাধ্যমে আমাদের ফান্ডে সহায়তা পাঠাতে পারেন।</p>
+            <a href="#" class="btn-donate">এখনই অনুদান দিন</a>
+        </div>
+
+    </div>
+
+    <!-- ফুটার -->
+    <footer>
+        <p>&copy; ২০২৬ আল-আহসান ফাউন্ডেশন বাংলাদেশ। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+</body>
+</html>
